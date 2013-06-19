@@ -45,11 +45,17 @@ class SettingsController < Formotion::FormController
       server = data[:server]
       username = data[:username]
       password = data[:password]
-      unless presentingViewController.delegate.test_user_credentials(server,username,password)
+      presentingViewController.delegate.test_user_credentials(server,username,password) do |cookie|
         alert = UIAlertView.alloc.init
-        alert.title = "Connection Failed"
-        alert.message = "Please verify your settings."
         alert.addButtonWithTitle("OK")
+        if cookie
+          alert.title = "Connection Succeeded"
+          alert.message = "Cool."
+          presentingViewController.dismissViewControllerAnimated(true, completion:nil)
+        else
+          alert.title = "Connection Failed"
+          alert.message = "Please verify your settings."
+        end
         alert.show
       end
     end

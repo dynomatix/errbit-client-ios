@@ -4,7 +4,7 @@ class ProblemsController < UITableViewController
   def viewDidLoad
     view.dataSource = view.delegate = self
     @problems = []
-    fetchStatus
+    load_data
   end
 
   def viewWillAppear(animated)
@@ -26,11 +26,8 @@ class ProblemsController < UITableViewController
     cell
   end
 
-  def fetchStatus
-    BW::HTTP.get(API_URL) do |r|
-      @problems = BW::JSON.parse(r.body)['jobs']
-      reload_data
-    end
+  def load_data
+    puts "Loading data here..."
   end
 
   def reload_data
