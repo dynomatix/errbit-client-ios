@@ -5,6 +5,10 @@ class ProblemsController < UITableViewController
     view.dataSource = view.delegate = self
     @problems = []
     load_data
+
+    refreshControl = UIRefreshControl.alloc.init
+    refreshControl.addTarget(self, action:'refresh:', forControlEvents:UIControlEventValueChanged)
+    self.setRefreshControl(refreshControl)
   end
 
   def viewWillAppear(animated)
@@ -30,7 +34,8 @@ class ProblemsController < UITableViewController
     puts "Loading data here..."
   end
 
-  def reload_data
-    view.reloadData
+  def refresh(sender)
+    puts "Loading data here..."
+    # view.reloadData
   end
 end
