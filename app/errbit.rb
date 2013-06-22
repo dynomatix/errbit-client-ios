@@ -22,7 +22,7 @@ class Errbit
     fetch_url = "#{base_url}#{end_point}"
     BW::HTTP.get("#{fetch_url}", {cookie: true }) do |response|
       if response.ok?
-        json = BW::JSON.parse(response.body.to_str)
+        json = BW::JSON.parse(response.body.to_str).sort_by{|i| i['last_notice_at']}.reverse
         block.call(json)
       else
         App.alert("Could not fetch feed.")
