@@ -1,6 +1,13 @@
 class ProblemsController < UITableViewController
+
+  def initWithServer server
+    initWithNibName(nil, bundle:nil)
+    @server = server
+    self
+  end
+
   def viewDidLoad
-    @settings = Settings.new
+    super
     view.dataSource = view.delegate = self
     @problems = []
 
@@ -8,13 +15,13 @@ class ProblemsController < UITableViewController
     refreshControl.addTarget(self, action:'refresh:', forControlEvents:UIControlEventValueChanged)
     self.setRefreshControl(refreshControl)
 
-    @errbit = Errbit.new( server: @settings.server, username: @settings.username, password: @settings.password ) do
+    @errbit = Errbit.new( server: @server.server, username: @server.username, password: @server.password ) do
       refresh(nil)
     end
   end
 
   def viewWillAppear(animated)
-    navigationItem.title = 'Problems'
+    navigationItem.title = @server.name
   end
 
   def tableView(tableView, numberOfRowsInSection:section)

@@ -1,12 +1,11 @@
 class AppDelegate
-  attr_accessor :settings
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    @problems = ProblemsController.alloc.init
-    @nav = UINavigationController.alloc.initWithRootViewController(@problems)
-    @nav.wantsFullScreenLayout = true
-    @nav.delegate = self
+    @servers_controller = ServersController.alloc.init
+    @navigation_controller = UINavigationController.alloc.initWithRootViewController(@servers_controller)
+    @navigation_controller.wantsFullScreenLayout = true
+    @navigation_controller.delegate = self
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    @window.rootViewController = @nav
+    @window.rootViewController = @navigation_controller
     @window.makeKeyAndVisible
 
     true
