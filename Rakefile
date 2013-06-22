@@ -4,6 +4,7 @@ require 'motion/project/template/ios'
 require 'formotion'
 require 'bundler/setup'
 Bundler.require
+require "sugarcube-repl"
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
