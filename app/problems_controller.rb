@@ -38,6 +38,13 @@ class ProblemsController < UITableViewController
     cell
   end
 
+  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    storyboard = UIStoryboard.storyboardWithName("Storyboard", bundle:nil)
+    problem_controller = storyboard.instantiateViewControllerWithIdentifier "Problem"
+    problem_controller.problem = @problems[indexPath.row]
+    navigationController.pushViewController(problem_controller, animated:true)
+  end
+
   def load_data(&block)
     @errbit.problems do |problems|
       @problems = problems
