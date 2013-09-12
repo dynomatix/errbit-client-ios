@@ -8,8 +8,11 @@ require "sugarcube-repl"
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'errbit-client'
+  app.name = 'Errbit'
+  app.identifier = "com.dynomatix.errbit"
   app.frameworks += ['CoreData']
+  app.device_family = [:iphone, :ipad]
+  app.codesign_certificate = "iPhone Developer: Yuri kovalov (GGMDWH2C3S)"
 end
 
 namespace :simulator do
