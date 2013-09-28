@@ -6,9 +6,8 @@ class Errbit
 
     getCSRF do |csrf|
       credentials = {user: {email: username, password: password}, authenticity_token: csrf}
-      BW::HTTP.post("#{@server}users/sign_in", {payload: credentials, cookie: false }) do |response|
+      BW::HTTP.post("#{@server}users/sign_in", {payload: credentials, cookie: true }) do |response|
         if response.ok?
-          @authCookie = response.headers['Set-Cookie']
           block.call if block
         else
           App.alert("Could not connect to server.")
@@ -22,10 +21,14 @@ class Errbit
   end
 
   def getCSRF(&block)
-    BW::HTTP.get("#{@server}users/sign_in", { cookie: false }) do |response|
+    BW::HTTP.get("#{@server}users/sign_in", { cookie: true }) do |response|
       if response.ok?
-        csrf = response.body.to_str.scan(/authenticity_token" type="hidden" value="([^"]*)"/)[0][0]
-        block.call csrf if block
+        csrf_matches = response.body.to_str.scan(/authenticity_token" type="hidden" value="([^"]*)"/)
+        if csrf_matches.count > 0
+          block.call csrf_matches[0][0] if block
+        else
+          block.call nil if block
+        end
       else
         App.alert("Could not connect to server.")
       end
@@ -34,7 +37,7 @@ class Errbit
 
   def get_feed(end_point, &block)
     fetch_url = "#{base_url}#{end_point}"
-    BW::HTTP.get("#{fetch_url}", {cookie: @authCookie }) do |response|
+    BW::HTTP.get("#{fetch_url}", {cookie: true }) do |response|
       if response.ok?
         json_string = response.body.to_str.dataUsingEncoding(NSUTF8StringEncoding)
         e = Pointer.new(:object)
