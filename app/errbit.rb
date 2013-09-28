@@ -31,7 +31,7 @@ class Errbit
   end
 
   def problems(&block)
-    get_feed("problems") do |json|
+    get_feed("problems.json") do |json|
       if block
         block.call(json)
       else
