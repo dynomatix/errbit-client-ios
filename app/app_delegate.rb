@@ -10,4 +10,8 @@ class AppDelegate
 
     true
   end
+
+def application(application, handleOpenURL:url)
+    true
+  end
 end

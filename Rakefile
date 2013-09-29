@@ -13,6 +13,10 @@ Motion::Project::App.setup do |app|
   app.frameworks += ['CoreData']
   app.device_family = [:iphone, :ipad]
   app.codesign_certificate = "iPhone Developer: Yuri kovalov (GGMDWH2C3S)"
+  app.info_plist['CFBundleURLTypes'] = [
+    { 'CFBundleURLName' => 'com.dynomatix.errbit',
+      'CFBundleURLSchemes' => ['errbit']}
+  ]
 end
 
 namespace :simulator do
