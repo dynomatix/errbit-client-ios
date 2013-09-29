@@ -9,9 +9,12 @@ require "sugarcube-repl"
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'Errbit'
+  app.version = "0.1"
   app.identifier = "com.dynomatix.errbit"
-  app.frameworks += ['CoreData']
+  app.xcode_dir = "/Applications/Xcode.app/Contents/Developer"
+  app.sdk_version = "7.0"
   app.device_family = [:iphone, :ipad]
+  app.frameworks += ['CoreData']
   app.codesign_certificate = "iPhone Developer: Yuri kovalov (GGMDWH2C3S)"
   app.info_plist['CFBundleURLTypes'] = [
     { 'CFBundleURLName' => 'com.dynomatix.errbit',
