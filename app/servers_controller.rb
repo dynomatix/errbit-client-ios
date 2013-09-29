@@ -37,6 +37,18 @@ class ServersController < UITableViewController
     navigationController.pushViewController(@host_settings_controller, animated:true)
   end
 
+  def tableView(tableView, canEditRowAtIndexPath:indexPath)
+    true
+  end
+
+  def tableView(tableView, commitEditingStyle:editingStyle, forRowAtIndexPath:indexPath)
+    if editingStyle == UITableViewCellEditingStyleDelete
+      server = HostSettingsStore.shared.hosts[indexPath.row]
+      HostSettingsStore.shared.remove_host server
+      view.reloadData
+    end
+  end
+
   def add_button_pressed(sender)
     host = Host.new()
     @host_settings_controller = HostSettingsController.alloc.initController(host)
