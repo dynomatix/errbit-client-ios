@@ -1,47 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Dh5-pw-yJ1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Dh5-pw-yJ1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Problem Controller-->
         <scene sceneID="T8m-gS-BYy">
             <objects>
                 <viewController storyboardIdentifier="Problem" id="Dh5-pw-yJ1" customClass="ProblemController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fNm-4G-EW5"/>
+                        <viewControllerLayoutGuide type="bottom" id="3tH-nx-Z6h"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cro-yf-vbK">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="App_name (environment)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYH-Pz-2kZ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="App_name (environment)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYH-Pz-2kZ">
+                                <rect key="frame" x="10" y="75" width="230" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" type="user" id="Obu-wj-4Kr"/>
+                                    <constraint firstAttribute="height" constant="21" id="Obu-wj-4Kr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Message" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="x1B-X4-GsT" customClass="DynamicLabel">
+                                <rect key="frame" x="10" y="106" width="300" height="27"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" type="user" id="uyR-fa-2ZZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="uyR-fa-2ZZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j10-QK-fnD">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j10-QK-fnD">
+                                <rect key="frame" x="260" y="75" width="50" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" type="user" id="zfA-Yi-CiD"/>
+                                    <constraint firstAttribute="width" constant="50" id="zfA-Yi-CiD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last notice at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poa-Jt-TBO">
+                                <rect key="frame" x="10" y="143" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Where" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJg-SS-Dqh">
+                                <rect key="frame" x="10" y="174" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,18 +58,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fYH-Pz-2kZ" firstAttribute="top" secondItem="cro-yf-vbK" secondAttribute="top" constant="10" type="user" id="CaN-RG-6RW"/>
-                            <constraint firstItem="JJg-SS-Dqh" firstAttribute="top" secondItem="poa-Jt-TBO" secondAttribute="bottom" constant="10" type="user" id="DSm-Pq-mW6"/>
-                            <constraint firstItem="j10-QK-fnD" firstAttribute="top" secondItem="fYH-Pz-2kZ" secondAttribute="top" type="user" id="G3W-mO-85b"/>
-                            <constraint firstAttribute="trailing" secondItem="j10-QK-fnD" secondAttribute="trailing" constant="10" type="user" id="Gal-Ex-IXl"/>
-                            <constraint firstItem="JJg-SS-Dqh" firstAttribute="leading" secondItem="poa-Jt-TBO" secondAttribute="leading" type="user" id="H1a-eO-1rf"/>
-                            <constraint firstItem="j10-QK-fnD" firstAttribute="leading" secondItem="fYH-Pz-2kZ" secondAttribute="trailing" constant="20" type="user" id="IWZ-kA-bjW"/>
-                            <constraint firstItem="x1B-X4-GsT" firstAttribute="top" secondItem="cro-yf-vbK" secondAttribute="top" constant="41" type="user" id="hAh-me-AbZ"/>
-                            <constraint firstItem="poa-Jt-TBO" firstAttribute="top" secondItem="x1B-X4-GsT" secondAttribute="bottom" constant="10" type="user" id="jgJ-UP-9H0"/>
-                            <constraint firstItem="x1B-X4-GsT" firstAttribute="leading" secondItem="cro-yf-vbK" secondAttribute="leading" constant="10" type="user" id="nVa-77-rIa"/>
-                            <constraint firstAttribute="trailing" secondItem="x1B-X4-GsT" secondAttribute="trailing" constant="10" type="user" id="s11-DC-5Rm"/>
-                            <constraint firstItem="fYH-Pz-2kZ" firstAttribute="leading" secondItem="cro-yf-vbK" secondAttribute="leading" constant="10" type="user" id="zXL-cD-RqN"/>
-                            <constraint firstItem="poa-Jt-TBO" firstAttribute="leading" secondItem="x1B-X4-GsT" secondAttribute="leading" type="user" id="zid-Dt-Uje"/>
+                            <constraint firstItem="JJg-SS-Dqh" firstAttribute="top" secondItem="poa-Jt-TBO" secondAttribute="bottom" constant="10" id="DSm-Pq-mW6"/>
+                            <constraint firstItem="j10-QK-fnD" firstAttribute="top" secondItem="fYH-Pz-2kZ" secondAttribute="top" id="G3W-mO-85b"/>
+                            <constraint firstAttribute="trailing" secondItem="j10-QK-fnD" secondAttribute="trailing" constant="10" id="Gal-Ex-IXl"/>
+                            <constraint firstItem="JJg-SS-Dqh" firstAttribute="leading" secondItem="poa-Jt-TBO" secondAttribute="leading" id="H1a-eO-1rf"/>
+                            <constraint firstItem="j10-QK-fnD" firstAttribute="leading" secondItem="fYH-Pz-2kZ" secondAttribute="trailing" constant="20" id="IWZ-kA-bjW"/>
+                            <constraint firstItem="fYH-Pz-2kZ" firstAttribute="top" relation="lessThanOrEqual" secondItem="cro-yf-vbK" secondAttribute="top" constant="75" id="RP8-ux-Cai"/>
+                            <constraint firstItem="x1B-X4-GsT" firstAttribute="top" secondItem="cro-yf-vbK" secondAttribute="top" constant="106" id="hAh-me-AbZ"/>
+                            <constraint firstItem="poa-Jt-TBO" firstAttribute="top" secondItem="x1B-X4-GsT" secondAttribute="bottom" constant="10" id="jgJ-UP-9H0"/>
+                            <constraint firstItem="x1B-X4-GsT" firstAttribute="leading" secondItem="cro-yf-vbK" secondAttribute="leading" constant="10" id="nVa-77-rIa"/>
+                            <constraint firstAttribute="trailing" secondItem="x1B-X4-GsT" secondAttribute="trailing" constant="10" id="s11-DC-5Rm"/>
+                            <constraint firstItem="fYH-Pz-2kZ" firstAttribute="leading" secondItem="cro-yf-vbK" secondAttribute="leading" constant="10" id="zXL-cD-RqN"/>
+                            <constraint firstItem="poa-Jt-TBO" firstAttribute="leading" secondItem="x1B-X4-GsT" secondAttribute="leading" id="zid-Dt-Uje"/>
                         </constraints>
                     </view>
                     <connections>
@@ -76,70 +85,6 @@
             <point key="canvasLocation" x="125" y="88"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DynamicLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DynamicLabel.h"/>
-            <relationships>
-                <relationship kind="action" name="awakeFromNib"/>
-                <relationship kind="action" name="expectedHeight"/>
-                <relationship kind="action" name="resizeToFit"/>
-                <relationship kind="outlet" name="message_height_constraint"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-            <relationships>
-                <relationship kind="action" name="to_s"/>
-            </relationships>
-        </class>
-        <class className="ProblemController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProblemController.h"/>
-            <relationships>
-                <relationship kind="action" name="awakeFromNib"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="outlet" name="app_name"/>
-                <relationship kind="outlet" name="environment"/>
-                <relationship kind="outlet" name="first_notice_at"/>
-                <relationship kind="outlet" name="last_notice_at"/>
-                <relationship kind="outlet" name="message"/>
-                <relationship kind="outlet" name="notices_count"/>
-                <relationship kind="outlet" name="resolved"/>
-                <relationship kind="outlet" name="resolved_at"/>
-                <relationship kind="outlet" name="where"/>
-            </relationships>
-        </class>
-        <class className="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UILabel.h"/>
-            <relationships>
-                <relationship kind="action" name="fit_to_size:"/>
-                <relationship kind="action" name="to_s:"/>
-            </relationships>
-        </class>
-        <class className="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIView.h"/>
-            <relationships>
-                <relationship kind="action" name="controller"/>
-                <relationship kind="action" name="dummy"/>
-                <relationship kind="action" name="first_responder"/>
-                <relationship kind="action" name="handle_gesture:"/>
-                <relationship kind="action" name="hide"/>
-                <relationship kind="action" name="shake:"/>
-                <relationship kind="action" name="show"/>
-                <relationship kind="action" name="to_s:"/>
-                <relationship kind="action" name="uiimage:"/>
-                <relationship kind="action" name="unshift:"/>
-            </relationships>
-        </class>
-        <class className="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="content_frame"/>
-                <relationship kind="action" name="pop"/>
-                <relationship kind="action" name="push:"/>
-                <relationship kind="action" name="to_s"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
