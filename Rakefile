@@ -11,6 +11,7 @@ Motion::Project::App.setup do |app|
   app.name = 'Errbit'
   app.version = "0.1"
   app.identifier = "com.dynomatix.errbit"
+  app.icons = ["Icon.png", "Icon-76.png", "Icon-120.png", "Icon-152.png",]
   app.xcode_dir = "/Applications/Xcode.app/Contents/Developer"
   app.sdk_version = "7.0"
   app.device_family = [:iphone, :ipad]
