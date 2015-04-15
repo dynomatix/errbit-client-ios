@@ -13,7 +13,7 @@ Motion::Project::App.setup do |app|
   app.identifier = "com.dynomatix.errbit"
   app.icons = ["Icon.png", "Icon-76.png", "Icon-120.png", "Icon-152.png",]
   app.xcode_dir = "/Applications/Xcode.app/Contents/Developer"
-  app.sdk_version = "7.0"
+  app.sdk_version = "8.3"
   app.device_family = [:iphone, :ipad]
   app.frameworks += ['CoreData']
   app.codesign_certificate = "iPhone Developer: Yuri kovalov (GGMDWH2C3S)"
